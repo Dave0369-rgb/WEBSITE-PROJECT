@@ -1,0 +1,271 @@
+/* Import a clean, modern font that fits the Japanese aesthetic */
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&display=swap");
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: "Noto Sans JP", sans-serif;
+}
+
+body {
+  background-color: #ffffff;
+  color: #333333;
+  line-height: 1.6;
+  animation: fadeIn 0.8s ease-in-out; /* Page load animation */
+}
+
+/* Keyframe animation for smooth page entry */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+nav {
+  background: linear-gradient(135deg, #cc0000, #8b0000);
+  border-bottom: 3px solid #660000;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+nav ul {
+  list-style-type: none;
+  display: flex;
+  justify-content: center;
+  padding: 15px;
+}
+
+nav ul li {
+  margin: 0 15px;
+}
+
+nav ul li a {
+  color: white;
+  text-decoration: none;
+  font-weight: 700;
+  letter-spacing: 1px;
+  padding: 5px 10px;
+  border-radius: 4px;
+  transition:
+    background-color 0.3s ease,
+    color 0.3s ease;
+}
+
+nav ul li a:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+  color: #ffcccc;
+}
+
+section {
+  padding: 50px 20px;
+  max-width: 850px;
+  margin: 0 auto;
+}
+
+h1,
+h2,
+h3 {
+  margin-bottom: 15px;
+  color: #cc0000;
+  border-bottom: 2px solid #ffcccc;
+  display: inline-block;
+  padding-bottom: 5px;
+}
+
+.profile-pic {
+  width: 180px;
+  height: 180px;
+  object-fit: cover;
+  object-position: center 15%;
+  border-radius: 50%;
+  margin-bottom: 20px;
+  border: 4px solid #cc0000;
+  box-shadow: 0 4px 10px rgba(204, 0, 0, 0.1);
+  transition: transform 0.4s ease;
+}
+
+.profile-pic:hover {
+  transform: rotate(5deg) scale(1.05);
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 25px;
+  box-shadow: 0 4px 10px rgba(204, 0, 0, 0.1);
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+th,
+td {
+  padding: 12px 15px;
+  text-align: left;
+  border-bottom: 1px solid #ffcccc;
+}
+
+th {
+  background-color: #cc0000;
+  color: white;
+}
+
+tr:hover {
+  background-color: #fff5f5; /* Subtle row hover */
+}
+
+.project-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 25px;
+  margin-top: 20px;
+}
+
+.project-card {
+  background: #fffcfc;
+  padding: 20px;
+  border: 1px solid #ffcccc;
+  border-radius: 8px;
+  text-align: center;
+  box-shadow: 0 4px 10px rgba(204, 0, 0, 0.1);
+  transition: all 0.3s ease;
+}
+
+.project-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 8px 15px rgba(204, 0, 0, 0.2);
+  border-color: #cc0000;
+}
+
+.project-card img {
+  max-width: 100%;
+  border-radius: 4px;
+  margin-bottom: 15px;
+}
+
+.project-card a {
+  display: inline-block;
+  margin-top: 10px;
+  color: #cc0000;
+  text-decoration: none;
+  font-weight: bold;
+  border: 1px solid #cc0000;
+  padding: 5px 15px;
+  border-radius: 20px;
+  transition: 0.3s;
+}
+
+.project-card a:hover {
+  background-color: #cc0000;
+  color: white;
+}
+
+.planner-container input {
+  padding: 12px;
+  width: 70%;
+  border: 2px solid #ffcccc;
+  border-radius: 4px;
+  outline: none;
+  transition: border-color 0.3s;
+}
+
+.planner-container input:focus {
+  border-color: #cc0000;
+}
+
+button {
+  padding: 12px 25px;
+  background-color: #cc0000;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: bold;
+  box-shadow: 0 2px 4px rgba(204, 0, 0, 0.3);
+  transition:
+    background-color 0.3s,
+    transform 0.1s;
+}
+
+button:active {
+  transform: scale(0.98);
+}
+
+button:hover {
+  background-color: #8b0000;
+}
+
+#taskList {
+  list-style-type: none;
+  margin-top: 25px;
+}
+
+#taskList li {
+  background: #fffcfc;
+  padding: 15px;
+  margin-bottom: 12px;
+  border-left: 5px solid #cc0000;
+  border-radius: 4px;
+  box-shadow: 0 4px 10px rgba(204, 0, 0, 0.1);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: 0.3s;
+}
+
+#taskList li:hover {
+  transform: translateX(5px);
+}
+
+.completed {
+  text-decoration: line-through;
+  opacity: 0.5;
+  border-left-color: #999999 !important;
+}
+
+form {
+  background: #fffcfc;
+  padding: 30px;
+  border: 1px solid #ffcccc;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(204, 0, 0, 0.1);
+}
+
+input[type="text"],
+textarea {
+  width: 100%;
+  padding: 12px;
+  margin-top: 8px;
+  border: 2px solid #eeeeee;
+  border-radius: 4px;
+  transition: border-color 0.3s;
+}
+
+input[type="text"]:focus,
+textarea:focus {
+  border-color: #cc0000;
+  outline: none;
+}
+
+@media (max-width: 768px) {
+  nav ul {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .planner-container input {
+    width: 100%;
+    margin-bottom: 15px;
+  }
+
+  button {
+    width: 100%;
+  }
+}
