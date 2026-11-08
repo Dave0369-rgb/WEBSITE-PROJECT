@@ -1,5 +1,15 @@
-/* Import a clean, modern font that fits the Japanese aesthetic */
+/* Clean, modern font */
 @import url("https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&display=swap");
+
+:root {
+  --red: #cc0000;
+  --red-dark: #8b0000;
+  --red-deep: #660000;
+  --red-soft: #ffcccc;
+  --red-tint: #fffcfc;
+  --text: #333333;
+  --shadow: 0 4px 10px rgba(204, 0, 0, 0.1);
+}
 
 * {
   box-sizing: border-box;
@@ -8,14 +18,25 @@
   font-family: "Noto Sans JP", sans-serif;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   background-color: #ffffff;
-  color: #333333;
+  color: var(--text);
   line-height: 1.6;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
   animation: fadeIn 0.8s ease-in-out; /* Page load animation */
 }
 
-/* Keyframe animation for smooth page entry */
+main,
+section {
+  width: 100%;
+}
+
 @keyframes fadeIn {
   from {
     opacity: 0;
@@ -27,24 +48,38 @@ body {
   }
 }
 
-nav {
-  background: linear-gradient(135deg, #cc0000, #8b0000);
-  border-bottom: 3px solid #660000;
+/* ---------- Header and navigation ---------- */
+.site-header {
+  background: linear-gradient(135deg, var(--red), var(--red-dark));
+  border-bottom: 3px solid var(--red-deep);
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
   position: sticky;
   top: 0;
   z-index: 100;
 }
 
+nav {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 10px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.brand {
+  color: white;
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 1.3rem;
+  letter-spacing: 2px;
+}
+
 nav ul {
   list-style-type: none;
   display: flex;
-  justify-content: center;
-  padding: 15px;
-}
-
-nav ul li {
-  margin: 0 15px;
+  gap: 6px;
 }
 
 nav ul li a {
@@ -52,21 +87,42 @@ nav ul li a {
   text-decoration: none;
   font-weight: 700;
   letter-spacing: 1px;
-  padding: 5px 10px;
+  padding: 6px 12px;
   border-radius: 4px;
+  display: inline-block;
   transition:
     background-color 0.3s ease,
     color 0.3s ease;
 }
 
 nav ul li a:hover {
-  background-color: rgba(255, 255, 255, 0.1);
-  color: #ffcccc;
+  background-color: rgba(255, 255, 255, 0.15);
+  color: #ffe6e6;
 }
 
+nav ul li a.active {
+  background-color: rgba(255, 255, 255, 0.22);
+}
+
+.nav-toggle {
+  display: none;
+  background: transparent;
+  border: 2px solid white;
+  color: white;
+  font-size: 1.4rem;
+  padding: 2px 12px;
+  box-shadow: none;
+  width: auto;
+}
+
+.nav-toggle:hover {
+  background: rgba(255, 255, 255, 0.15);
+}
+
+/* ---------- Sections and headings ---------- */
 section {
   padding: 50px 20px;
-  max-width: 850px;
+  max-width: 900px;
   margin: 0 auto;
 }
 
@@ -74,33 +130,175 @@ h1,
 h2,
 h3 {
   margin-bottom: 15px;
-  color: #cc0000;
-  border-bottom: 2px solid #ffcccc;
+  color: var(--red);
+  border-bottom: 2px solid var(--red-soft);
   display: inline-block;
   padding-bottom: 5px;
 }
 
+p {
+  margin-bottom: 12px;
+}
+
+.muted {
+  color: #777777;
+  font-size: 0.95rem;
+}
+
+/* ---------- Home: hero ---------- */
+.hero {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+}
+
+.hero-text {
+  flex: 1;
+}
+
+.eyebrow {
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: var(--red-dark);
+  margin-bottom: 6px;
+}
+
+.lead {
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: var(--red-dark);
+}
+
+.cta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 20px;
+}
+
+.btn {
+  display: inline-block;
+  padding: 12px 26px;
+  background-color: var(--red);
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  border: 2px solid var(--red);
+  border-radius: 30px;
+  box-shadow: 0 2px 4px rgba(204, 0, 0, 0.3);
+  transition:
+    background-color 0.3s,
+    color 0.3s,
+    transform 0.1s;
+}
+
+.btn:hover {
+  background-color: var(--red-dark);
+  border-color: var(--red-dark);
+}
+
+.btn:active {
+  transform: scale(0.98);
+}
+
+.btn-outline {
+  background: transparent;
+  color: var(--red);
+  box-shadow: none;
+}
+
+.btn-outline:hover {
+  background-color: var(--red);
+  color: white;
+  border-color: var(--red);
+}
+
 .profile-pic {
-  width: 180px;
-  height: 180px;
+  width: 220px;
+  height: 220px;
   object-fit: cover;
   object-position: center 15%;
   border-radius: 50%;
-  margin-bottom: 20px;
-  border: 4px solid #cc0000;
-  box-shadow: 0 4px 10px rgba(204, 0, 0, 0.1);
+  border: 4px solid var(--red);
+  box-shadow: var(--shadow);
   transition: transform 0.4s ease;
+  flex-shrink: 0;
 }
 
 .profile-pic:hover {
   transform: rotate(5deg) scale(1.05);
 }
 
+/* ---------- Home: skill chips and stats ---------- */
+.chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.chip,
+.tag {
+  display: inline-block;
+  padding: 6px 16px;
+  border: 1px solid var(--red);
+  border-radius: 20px;
+  color: var(--red);
+  background: var(--red-tint);
+  font-weight: 700;
+  font-size: 0.9rem;
+}
+
+.tag {
+  padding: 3px 12px;
+  font-size: 0.8rem;
+  margin-top: 6px;
+}
+
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 20px;
+}
+
+.stat {
+  background: var(--red-tint);
+  border: 1px solid var(--red-soft);
+  border-radius: 8px;
+  box-shadow: var(--shadow);
+  padding: 20px 10px;
+  text-align: center;
+}
+
+.stat-num {
+  display: block;
+  font-size: 2.4rem;
+  font-weight: 700;
+  color: var(--red);
+  line-height: 1.2;
+}
+
+.stat-label {
+  display: block;
+  font-size: 0.9rem;
+  color: var(--text);
+}
+
+/* ---------- About ---------- */
+.skill-list {
+  margin: 0 0 25px 25px;
+}
+
+.skill-list li {
+  margin-bottom: 4px;
+}
+
 table {
   width: 100%;
   border-collapse: collapse;
   margin-bottom: 25px;
-  box-shadow: 0 4px 10px rgba(204, 0, 0, 0.1);
+  box-shadow: var(--shadow);
   border-radius: 8px;
   overflow: hidden;
 }
@@ -109,18 +307,24 @@ th,
 td {
   padding: 12px 15px;
   text-align: left;
-  border-bottom: 1px solid #ffcccc;
+  border-bottom: 1px solid var(--red-soft);
 }
 
 th {
-  background-color: #cc0000;
+  background-color: var(--red);
   color: white;
 }
 
 tr:hover {
-  background-color: #fff5f5; /* Subtle row hover */
+  background-color: #fff5f5;
 }
 
+audio {
+  width: 100%;
+  max-width: 420px;
+}
+
+/* ---------- Projects ---------- */
 .project-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -129,19 +333,19 @@ tr:hover {
 }
 
 .project-card {
-  background: #fffcfc;
+  background: var(--red-tint);
   padding: 20px;
-  border: 1px solid #ffcccc;
+  border: 1px solid var(--red-soft);
   border-radius: 8px;
   text-align: center;
-  box-shadow: 0 4px 10px rgba(204, 0, 0, 0.1);
+  box-shadow: var(--shadow);
   transition: all 0.3s ease;
 }
 
 .project-card:hover {
   transform: translateY(-8px);
   box-shadow: 0 8px 15px rgba(204, 0, 0, 0.2);
-  border-color: #cc0000;
+  border-color: var(--red);
 }
 
 .project-card img {
@@ -150,39 +354,28 @@ tr:hover {
   margin-bottom: 15px;
 }
 
-.project-card a {
-  display: inline-block;
-  margin-top: 10px;
-  color: #cc0000;
-  text-decoration: none;
-  font-weight: bold;
-  border: 1px solid #cc0000;
-  padding: 5px 15px;
-  border-radius: 20px;
-  transition: 0.3s;
+.project-card h3 {
+  display: block;
+  border-bottom: none;
 }
 
-.project-card a:hover {
-  background-color: #cc0000;
-  color: white;
-}
-
+/* ---------- Planner ---------- */
 .planner-container input {
   padding: 12px;
   width: 70%;
-  border: 2px solid #ffcccc;
+  border: 2px solid var(--red-soft);
   border-radius: 4px;
   outline: none;
   transition: border-color 0.3s;
 }
 
 .planner-container input:focus {
-  border-color: #cc0000;
+  border-color: var(--red);
 }
 
 button {
   padding: 12px 25px;
-  background-color: #cc0000;
+  background-color: var(--red);
   color: white;
   border: none;
   border-radius: 4px;
@@ -199,7 +392,7 @@ button:active {
 }
 
 button:hover {
-  background-color: #8b0000;
+  background-color: var(--red-dark);
 }
 
 #taskList {
@@ -208,15 +401,16 @@ button:hover {
 }
 
 #taskList li {
-  background: #fffcfc;
+  background: var(--red-tint);
   padding: 15px;
   margin-bottom: 12px;
-  border-left: 5px solid #cc0000;
+  border-left: 5px solid var(--red);
   border-radius: 4px;
-  box-shadow: 0 4px 10px rgba(204, 0, 0, 0.1);
+  box-shadow: var(--shadow);
   display: flex;
   justify-content: space-between;
   align-items: center;
+  gap: 10px;
   transition: 0.3s;
 }
 
@@ -224,18 +418,53 @@ button:hover {
   transform: translateX(5px);
 }
 
+.task-text {
+  flex: 1;
+  word-break: break-word;
+}
+
+.task-buttons {
+  display: flex;
+  gap: 6px;
+}
+
+.task-buttons button {
+  padding: 8px 14px;
+}
+
+.btn-finish {
+  background-color: green;
+}
+
+.btn-finish:hover {
+  background-color: #006400;
+}
+
+.btn-remove {
+  background-color: black;
+}
+
+.btn-remove:hover {
+  background-color: #333333;
+}
+
 .completed {
-  text-decoration: line-through;
   opacity: 0.5;
   border-left-color: #999999 !important;
 }
 
+.completed .task-text {
+  text-decoration: line-through;
+}
+
+/* ---------- Contact form ---------- */
 form {
-  background: #fffcfc;
+  background: var(--red-tint);
   padding: 30px;
-  border: 1px solid #ffcccc;
+  border: 1px solid var(--red-soft);
   border-radius: 8px;
-  box-shadow: 0 4px 10px rgba(204, 0, 0, 0.1);
+  box-shadow: var(--shadow);
+  margin-top: 20px;
 }
 
 input[type="text"],
@@ -250,14 +479,59 @@ textarea {
 
 input[type="text"]:focus,
 textarea:focus {
-  border-color: #cc0000;
+  border-color: var(--red);
   outline: none;
 }
 
+#formFeedback {
+  margin-top: 15px;
+  font-weight: 700;
+}
+
+/* ---------- Footer ---------- */
+footer {
+  margin-top: auto;
+  background: linear-gradient(135deg, var(--red-dark), var(--red-deep));
+  color: white;
+  text-align: center;
+  padding: 18px 20px;
+  font-size: 0.9rem;
+}
+
+footer p {
+  margin: 0;
+}
+
+/* ---------- Mobile ---------- */
 @media (max-width: 768px) {
+  .nav-toggle {
+    display: block;
+  }
+
   nav ul {
+    display: none;
     flex-direction: column;
-    align-items: center;
+    width: 100%;
+    padding-top: 10px;
+  }
+
+  nav ul.open {
+    display: flex;
+  }
+
+  nav ul li a {
+    display: block;
+    text-align: center;
+  }
+
+  .hero {
+    flex-direction: column-reverse;
+    text-align: center;
+  }
+
+  .cta,
+  .chips {
+    justify-content: center;
   }
 
   .planner-container input {
@@ -265,7 +539,16 @@ textarea:focus {
     margin-bottom: 15px;
   }
 
-  button {
+  .planner-container > button {
+    width: 100%;
+  }
+
+  #taskList li {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  form button[type="submit"] {
     width: 100%;
   }
 }

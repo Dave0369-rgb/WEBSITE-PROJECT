@@ -3,25 +3,64 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Oladokun David Oluwaseun - cybersecurity student and aspiring penetration tester.">
     <title>Medds Nova - Home</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <nav>
-        <ul>
-            <li><a href="index.html">Home</a></li>
+    <header class="site-header">
+        <nav>
+            <a class="brand" href="index.html">MEDDS NOVA</a>
+            <button class="nav-toggle" id="navToggle" type="button" aria-label="Toggle menu" aria-expanded="false">&#9776;</button>
+            <ul id="navLinks">
+            <li><a href="index.html" class="active" aria-current="page">Home</a></li>
             <li><a href="about.html">About Me</a></li>
             <li><a href="projects.html">Projects</a></li>
             <li><a href="planner.html">Academic Planner</a></li>
             <li><a href="contact.html">Contact</a></li>
-        </ul>
-    </nav>
+            </ul>
+        </nav>
+    </header>
 
-    <section id="home">
-        <h1>Welcome to Medds Nova</h1>
-        <img src="images/passport_photo.jpg" alt="Passport photograph of Oladokun David Oluwaseun" class="profile-pic">
-        <h2>Hello, I'm OLADOKUN DAVID OLUWASEUN</h2>
-        <p>I am a 25-year-old from Pero, Agege, currently living with sickle cell, which has taught me resilience. I am a customer-focused professional with experience in bookings and administrative tasks, fluent in both English and Yoruba.</p>
+    <section id="home" class="hero">
+        <div class="hero-text">
+            <p class="eyebrow">Welcome to Medds Nova</p>
+            <h1>Hello, I'm OLADOKUN DAVID OLUWASEUN</h1>
+            <p class="lead">Cybersecurity student and aspiring penetration tester.</p>
+            <p>I am a 25-year-old from Pero, Agege, currently living with sickle cell, which has taught me resilience. I am a customer-focused professional with experience in bookings and administrative tasks, fluent in both English and Yoruba.</p>
+            <div class="cta">
+                <a class="btn" href="projects.html">View Projects</a>
+                <a class="btn btn-outline" href="contact.html">Get in Touch</a>
+            </div>
+        </div>
+        <img src="passport_photo.jpg" alt="Passport photograph of Oladokun David Oluwaseun" class="profile-pic"
+             data-fallback="images/passport_photo.jpg|passport.jpg|images/passport.jpg|passport_photo.jpeg|passport_photo.png"
+             onerror="window.imgFallback &amp;&amp; imgFallback(this)">
     </section>
+
+    <section id="skills-preview">
+        <h2>What I Bring</h2>
+        <div class="chips">
+            <span class="chip">Basic Networking</span>
+            <span class="chip">Junior Cybersecurity</span>
+            <span class="chip">Customer Service</span>
+            <span class="chip">Office Administration</span>
+        </div>
+    </section>
+
+    <section id="stats">
+        <div class="stats-grid">
+            <div class="stat"><span class="stat-num" data-target="2">0</span><span class="stat-label">Languages spoken</span></div>
+            <div class="stat"><span class="stat-num" data-target="5">0</span><span class="stat-label">Website pages built</span></div>
+            <div class="stat"><span class="stat-num" data-target="2">0</span><span class="stat-label">Projects showcased</span></div>
+            <div class="stat"><span class="stat-num" data-target="4">0</span><span class="stat-label">Core skill areas</span></div>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2026 OLADOKUN DAVID OLUWASEUN | B.Sc. Cybersecurity, MIVA Open University</p>
+    </footer>
+
+    <script src="script.js"></script>
 </body>
 </html>

@@ -3,42 +3,51 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Projects by Oladokun David Oluwaseun.">
     <title>Medds Nova - Projects</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <nav>
-        <ul>
+    <header class="site-header">
+        <nav>
+            <a class="brand" href="index.html">MEDDS NOVA</a>
+            <button class="nav-toggle" id="navToggle" type="button" aria-label="Toggle menu" aria-expanded="false">&#9776;</button>
+            <ul id="navLinks">
             <li><a href="index.html">Home</a></li>
             <li><a href="about.html">About Me</a></li>
-            <li><a href="projects.html">Projects</a></li>
+            <li><a href="projects.html" class="active" aria-current="page">Projects</a></li>
             <li><a href="planner.html">Academic Planner</a></li>
             <li><a href="contact.html">Contact</a></li>
-        </ul>
-    </nav>
+            </ul>
+        </nav>
+    </header>
 
     <section id="projects">
         <h2>My Projects</h2>
         <div class="project-grid">
             <div class="project-card">
-                <img src="https://via.placeholder.com/300x150/cc0000/ffffff?text=Travel+Booking" alt="Booking Prototype">
-                <h3>Travel Booking Prototype</h3>
-                <p>A mock administrative dashboard for a travel agency.</p>
-                <a href="#">View Project</a>
-            </div>
-            <div class="project-card">
-                <img src="https://via.placeholder.com/300x150/cc0000/ffffff?text=Cyber+Audit" alt="Cybersecurity Report">
+                <img src="project-cyber.svg" alt="Cybersecurity report"
+                     data-fallback="images/project-cyber.svg"
+                     onerror="window.imgFallback &amp;&amp; imgFallback(this)">
                 <h3>Cybersecurity Report</h3>
                 <p>A basic audit report written for my Miva coursework.</p>
-                <a href="#">View Project</a>
+                <span class="tag">Security</span> <span class="tag">Report</span>
             </div>
             <div class="project-card">
-                <img src="https://via.placeholder.com/300x150/cc0000/ffffff?text=Medds+Nova" alt="Medds Nova Project">
-                <h3>Medds Nova Admin</h3>
-                <p>A customer service portal simulation built with HTML/CSS.</p>
-                <a href="#">View Project</a>
+                <img src="project-portfolio.svg" alt="Medds Nova portfolio website"
+                     data-fallback="images/project-portfolio.svg"
+                     onerror="window.imgFallback &amp;&amp; imgFallback(this)">
+                <h3>Medds Nova Portfolio</h3>
+                <p>This website, built with HTML, CSS and JavaScript, with a study planner and a contact form.</p>
+                <span class="tag">HTML</span> <span class="tag">CSS</span> <span class="tag">JavaScript</span>
             </div>
         </div>
     </section>
+
+    <footer>
+        <p>&copy; 2026 OLADOKUN DAVID OLUWASEUN | B.Sc. Cybersecurity, MIVA Open University</p>
+    </footer>
+
+    <script src="script.js"></script>
 </body>
 </html>

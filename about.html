@@ -3,23 +3,28 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="About Oladokun David Oluwaseun: education, skills, hobbies and career goals.">
     <title>Medds Nova - About Me</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <nav>
-        <ul>
+    <header class="site-header">
+        <nav>
+            <a class="brand" href="index.html">MEDDS NOVA</a>
+            <button class="nav-toggle" id="navToggle" type="button" aria-label="Toggle menu" aria-expanded="false">&#9776;</button>
+            <ul id="navLinks">
             <li><a href="index.html">Home</a></li>
-            <li><a href="about.html">About Me</a></li>
+            <li><a href="about.html" class="active" aria-current="page">About Me</a></li>
             <li><a href="projects.html">Projects</a></li>
             <li><a href="planner.html">Academic Planner</a></li>
             <li><a href="contact.html">Contact</a></li>
-        </ul>
-    </nav>
+            </ul>
+        </nav>
+    </header>
 
     <section id="about">
         <h2>About Me (自己紹介)</h2>
-        
+
         <h3>Educational Background</h3>
         <table>
             <tr>
@@ -35,28 +40,36 @@
         </table>
 
         <h3>Career Aspirations</h3>
-        <p>I am seeking a receptionist position at a travel agency to utilize my training in travel and tourism management.</p>
+        <p>I aspire to become a penetration tester (pentester), using my growing skills in networking and cybersecurity to find and fix security weaknesses before attackers can exploit them.</p>
 
-        <h3>Technical & Professional Skills</h3>
-        <ul>
-            <li>Customer Service & Communication</li>
-            <li>Travel and Tourism Management</li>
+        <h3>Technical &amp; Professional Skills</h3>
+        <ul class="skill-list">
+            <li>Basic Networking</li>
+            <li>Junior Cybersecurity</li>
+            <li>Customer Service &amp; Communication</li>
             <li>Office Administration</li>
-            <li>Basic Cybersecurity</li>
+            <li>Bilingual: English &amp; Yoruba</li>
         </ul>
 
         <h3>Hobbies and Interests</h3>
-        <ul>
+        <ul class="skill-list">
             <li>Watching animes and action movies</li>
             <li>Reading books</li>
             <li>Playing beginner's chess</li>
-            <li>Listening to motivational speakers like Jack Kneel</li>
+            <li>Listening to motivational speakers like Tony Robbins</li>
         </ul>
-        
+
         <p>Motivational audio:</p>
         <audio controls>
             <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" type="audio/mpeg">
+            Your browser does not support the audio element.
         </audio>
     </section>
+
+    <footer>
+        <p>&copy; 2026 OLADOKUN DAVID OLUWASEUN | B.Sc. Cybersecurity, MIVA Open University</p>
+    </footer>
+
+    <script src="script.js"></script>
 </body>
 </html>

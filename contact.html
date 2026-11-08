@@ -3,27 +3,30 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Contact Oladokun David Oluwaseun.">
     <title>Medds Nova - Contact</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <nav>
-        <ul>
+    <header class="site-header">
+        <nav>
+            <a class="brand" href="index.html">MEDDS NOVA</a>
+            <button class="nav-toggle" id="navToggle" type="button" aria-label="Toggle menu" aria-expanded="false">&#9776;</button>
+            <ul id="navLinks">
             <li><a href="index.html">Home</a></li>
             <li><a href="about.html">About Me</a></li>
             <li><a href="projects.html">Projects</a></li>
             <li><a href="planner.html">Academic Planner</a></li>
-            <li><a href="contact.html">Contact</a></li>
-        </ul>
-    </nav>
+            <li><a href="contact.html" class="active" aria-current="page">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
 
     <section id="contact">
         <h2>Contact Me</h2>
         <p>Name: OLADOKUN DAVID OLUWASEUN</p>
-        <p>Email: <a href="mailto:d.oladokun7824@miva.edu.ng">d.oladokun7824@miva.edu.ng</a></p>
-        <p>Phone: <a href="tel:+2349068300633">09068300633</a></p>
-        
-        <form id="contactForm">
+
+        <form id="contactForm" novalidate>
             <label for="name">Name:</label><br>
             <input type="text" id="name" name="name"><br><br>
 
@@ -40,6 +43,10 @@
         </form>
         <p id="formFeedback"></p>
     </section>
+
+    <footer>
+        <p>&copy; 2026 OLADOKUN DAVID OLUWASEUN | B.Sc. Cybersecurity, MIVA Open University</p>
+    </footer>
 
     <script src="script.js"></script>
 </body>

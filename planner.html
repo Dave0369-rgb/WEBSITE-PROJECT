@@ -3,28 +3,39 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Medds Nova - Planner</title>
+    <meta name="description" content="A simple study planner that saves your tasks in your browser.">
+    <title>Medds Nova - Academic Planner</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <nav>
-        <ul>
+    <header class="site-header">
+        <nav>
+            <a class="brand" href="index.html">MEDDS NOVA</a>
+            <button class="nav-toggle" id="navToggle" type="button" aria-label="Toggle menu" aria-expanded="false">&#9776;</button>
+            <ul id="navLinks">
             <li><a href="index.html">Home</a></li>
             <li><a href="about.html">About Me</a></li>
             <li><a href="projects.html">Projects</a></li>
-            <li><a href="planner.html">Academic Planner</a></li>
+            <li><a href="planner.html" class="active" aria-current="page">Academic Planner</a></li>
             <li><a href="contact.html">Contact</a></li>
-        </ul>
-    </nav>
+            </ul>
+        </nav>
+    </header>
 
     <section id="planner">
         <h2>Academic Planner</h2>
+        <p class="muted">Your tasks are saved in this browser, so they will still be here when you come back.</p>
         <div class="planner-container">
-            <input type="text" id="taskInput" placeholder="Enter a new study task...">
-            <button onclick="addTask()">Add Task</button>
+            <input type="text" id="taskInput" placeholder="Enter a new study task..." aria-label="New study task">
+            <button type="button" onclick="addTask()">Add Task</button>
             <ul id="taskList"></ul>
+            <p id="taskCount" class="muted"></p>
         </div>
     </section>
+
+    <footer>
+        <p>&copy; 2026 OLADOKUN DAVID OLUWASEUN | B.Sc. Cybersecurity, MIVA Open University</p>
+    </footer>
 
     <script src="script.js"></script>
 </body>
